@@ -10,10 +10,11 @@ import { ProductComponent } from './components/product/product.component';
 import { StarsComponent } from './components/stars/stars.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ProductService } from './shared/product.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'product/:prodTitle', component: ProductDetailComponent},
+  { path: 'product/:prodId', component: ProductDetailComponent},
   { path: '**', component: HomeComponent },
 ];
 
@@ -36,7 +37,7 @@ const appRoutes: Routes = [
       { enableTracing: true }
     )
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
