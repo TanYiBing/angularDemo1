@@ -4,13 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { SearchComponent } from './components/search/search.component';
+// import { SearchComponent } from './components/search/search.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ProductComponent } from './components/product/product.component';
 import { StarsComponent } from './components/stars/stars.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductService } from './shared/product.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FilterPipe } from './pipe/filter.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,15 +25,17 @@ const appRoutes: Routes = [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    SearchComponent,
+    // SearchComponent,
     CarouselComponent,
     ProductComponent,
     StarsComponent,
     HomeComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }
