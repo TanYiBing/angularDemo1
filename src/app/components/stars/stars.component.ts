@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 
 
 @Component({
@@ -6,19 +6,24 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './stars.component.html',
   styleUrls: ['./stars.component.css']
 })
-export class StarsComponent implements OnInit {
+export class StarsComponent implements OnInit, OnChanges {
+
   @Input()
   private rating: number = 0;
-  @Input()
-  private readOnly: boolean = true;
   @Output()
   private ratingChange: EventEmitter<number> = new EventEmitter();
+  @Input()
+  private readOnly: boolean = true;
 
-  private stars: boolean[];
+  private stars: Array<boolean>;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
     this.stars = [];
     for (let i = 1; i <= 5; i++) {
       this.stars.push(i > this.rating);

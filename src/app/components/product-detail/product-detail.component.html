@@ -19,7 +19,7 @@
   </div>
   <div [hidden]="isCommentHidden">
     <div>
-      <app-stars [rating]="newRating" (ratingChange)="onRatingChange($event)" [readOnly]="false" ></app-stars>
+      <app-stars [(rating)]="newRating" [readOnly]="false" ></app-stars>
     </div>
     <div><textarea [(ngModel)]="newComment"></textarea></div>
     <div><button class="btn-primary" (click)="addComment()">提交</button></div>
