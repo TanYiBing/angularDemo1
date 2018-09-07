@@ -13,7 +13,7 @@ export class SearchComponent implements OnInit {
 
   formModel: FormGroup;
   constructor(private productService: ProductService) {
-    let fb = new FormBuilder();
+    const fb = new FormBuilder();
     this.formModel = fb.group({
       title: ['', Validators.minLength(3)],
       price: [null, this.positiveNumberValidator],
