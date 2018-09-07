@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-// import { SearchComponent } from './components/search/search.component';
+import { SearchComponent } from './components/search/search.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ProductComponent } from './components/product/product.component';
 import { StarsComponent } from './components/stars/stars.component';
@@ -26,7 +26,7 @@ const appRoutes: Routes = [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    // SearchComponent,
+    SearchComponent,
     CarouselComponent,
     ProductComponent,
     StarsComponent,

@@ -33,6 +33,10 @@ export class ProductService {
   getCommentsByProductId(id: number): Array<Comment> {
     return this.comments.filter( (comment: Comment) => comment.productId === id );
   }
+
+  getAllCategories(): Array<string> {
+    return ['电子产品', '硬件产品', '图书'];
+  }
 }
 
 
